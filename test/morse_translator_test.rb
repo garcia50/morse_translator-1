@@ -27,11 +27,17 @@ class TranslatorTest < Minitest::Test
     expect = ".. .--- ..-. .- ..-....-..."
     assert_equal expect, tran.from_file("input.txt")
   end
+
+  def test_morse_code_to_english
+    expect = "hello world"
+    actual = ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."
+    assert_equal expect, tran.morse_to_english(actual) 
+  end
 end
 
 
 
 # $ translator = Translate.new 
 #   => #<Translate:0x007fa1ab98cac0>
-#   $translator.from_file("input.txt")
-#   => ".. .--- ..-. .- ..-....-..."
+#   $ translator.morse_to_eng("......-...-..--- .-----.-..-..-..") 
+#   => "hello world"
