@@ -22,13 +22,16 @@ class TranslatorTest < Minitest::Test
     expect = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal expect, tran.eng_to_morse("There are 3 ships")
   end
+
+  def test_from_file_loads_given_file
+    expect = ".. .--- ..-. .- ..-....-..."
+    assert_equal expect, tran.from_file("input.txt")
+  end
 end
 
 
 
-  # $ translator = Translate.new 
-  # => #<Translate:0x007fa1ab98cac0>
-  # $ translator.eng_to_morse("Hello World") 
-  # => "......-...-..--- .-----.-..-..-.."
-  # $ translator.eng_to_morse("There are 3 ships") 
-  # => "-......-.. .-.-.. ...-- ..........--...."
+# $ translator = Translate.new 
+#   => #<Translate:0x007fa1ab98cac0>
+#   $translator.from_file("input.txt")
+#   => ".. .--- ..-. .- ..-....-..."

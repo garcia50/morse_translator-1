@@ -1,3 +1,5 @@
+require 'readline'
+
 class Translator
 
   def initialize
@@ -73,8 +75,17 @@ class Translator
   end
 
   def eng_to_morse(user_input)
-    answer = ''
+    answer = ""
     user_input.each_char { |c| answer << @alphabet[c.downcase]}
+    answer
+  end
+
+  def from_file(file)
+    english = File.open("lib/#{file}", 'r')
+    answer = ""
+    english.readline.chomp.each_char do |line|
+      answer += eng_to_morse(line)
+    end
     answer
   end
 
