@@ -28,7 +28,18 @@ class Translator
     "x" => "-..-",
     "y" => "-.--",
     "z" => "--..",
-    " " => " "}
+    " " => " ",
+    "1" => ".----",
+    "2" => "..---",
+    "3" => "...--",
+    "4" => "....-",
+    "5" => ".....",
+    "6" => "-....",
+    "7" => "--...",
+    "8" => "---..",
+    "9" => "----.",
+    "0" => "-----"  
+    }
 
     @morseenglish = { 
     ".-" =>  "A",
@@ -56,12 +67,14 @@ class Translator
     ".--" =>  "W",
     "-..-" => "X",
     "-.--" => "Y",
-    "--.." => "Z"}
+    "--.." => "Z"
+    }
+
   end
 
   def eng_to_morse(user_input)
     answer = ''
-    user_input.each_char { |c| answer += @alphabet[c.downcase]}
+    user_input.each_char { |c| answer << @alphabet[c.downcase]}
     answer
   end
 

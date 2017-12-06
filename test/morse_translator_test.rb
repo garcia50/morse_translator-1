@@ -17,11 +17,18 @@ class TranslatorTest < Minitest::Test
     expect = "......-...-..--- .-----.-..-..-.."
     assert_equal expect, tran.eng_to_morse("hello world")
   end
+
+  def test_eng_to_morse_with_numbers
+    expect = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expect, tran.eng_to_morse("There are 3 ships")
+  end
 end
 
 
 
   # $ translator = Translate.new 
   # => #<Translate:0x007fa1ab98cac0>
-  # $ translator.eng_to_morse("hello world") 
+  # $ translator.eng_to_morse("Hello World") 
   # => "......-...-..--- .-----.-..-..-.."
+  # $ translator.eng_to_morse("There are 3 ships") 
+  # => "-......-.. .-.-.. ...-- ..........--...."
